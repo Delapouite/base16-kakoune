@@ -26,6 +26,7 @@ return `
     ## http://chriskempson.com/projects/base16/
     ## default bg black
     base00='rgb:${theme.base00}'
+    base_black='rgb:${theme.base00}'
     ## lighter bg black
     base01='rgb:${theme.base01}'
     ## selection bg black
@@ -40,22 +41,31 @@ return `
     base06='rgb:${theme.base06}'
     ## light bg white
     base07='rgb:${theme.base07}'
+    base_white='rgb:${theme.base07}'
     ## red
     base08='rgb:${theme.base08}'
+    base_red='rgb:${theme.base08}'
     ## orange
     base09='rgb:${theme.base09}'
+    base_orange='rgb:${theme.base09}'
     ## yellow
     base0A='rgb:${theme.base0A}'
+    base_yellow='rgb:${theme.base0A}'
     ## green
     base0B='rgb:${theme.base0B}'
+    base_green='rgb:${theme.base0B}'
     ## cyan
     base0C='rgb:${theme.base0C}'
+    base_cyan='rgb:${theme.base0C}'
     ## blue
     base0D='rgb:${theme.base0D}'
+    base_blue='rgb:${theme.base0D}'
     ## purple
     base0E='rgb:${theme.base0E}'
+    base_purple='rgb:${theme.base0E}'
     ## brown
     base0F='rgb:${theme.base0F}'
+    base_brown='rgb:${theme.base0F}'
 
     ## code
     echo "
@@ -86,26 +96,26 @@ return `
 
     ## builtin
     echo "
-        face Default \${base05},\${base01}
-        face PrimarySelection white,blue
-        face SecondarySelection black,blue
-        face PrimaryCursor black,white
-        face SecondaryCursor black,white
+        face Default \${base05},\${base_black}
+        face PrimarySelection \${base_white},\${base_blue}
+        face SecondarySelection \${base05},\${base_blue}
+        face PrimaryCursor \${base_black},\${base_white}
+        face SecondaryCursor \${base_black},\${base05}
         face LineNumbers \${base05},\${base01}
         face LineNumberCursor \${base05},rgb:282828+b
-        face MenuForeground \${base05},blue
-        face MenuBackground blue,\${base05}
-        face MenuInfo \${base0D}
-        face Information \${base00},\${base0D}
-        face Error \${base05},\${base0B}
-        face StatusLine \${base05},\${base02}
-        face StatusLineMode \${base09}
-        face StatusLineInfo \${base0D}
-        face StatusLineValue \${base0B}
-        face StatusCursor \${base02},\${base0D}
-        face Prompt \${base00},\${base0D}
-        face MatchingChar \${base0D},\${base00}+b
-        face BufferPadding \${base0D},\${base01}
+        face MenuForeground \${base_white},\${base_blue}
+        face MenuBackground \${base_blue},\${base01}
+        face MenuInfo \${base_blue}
+        face Information \${base00},\${base_blue}
+        face Error \${base01},\${base_red}
+        face StatusLine \${base06},\${base01}
+        face StatusLineMode \${base_yellow}
+        face StatusLineInfo \${base_blue}
+        face StatusLineValue \${base_green}
+        face StatusCursor \${base02},\${base_blue}
+        face Prompt \${base_yellow},\${base_black}
+        face MatchingChar \${base_blue},\${base00}+b
+        face BufferPadding \${base_blue},\${base01}
     "
 }
 `
