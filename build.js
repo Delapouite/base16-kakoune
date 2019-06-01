@@ -1,8 +1,24 @@
 const fs = require('fs')
 const themes = require('./base16.json')
+// Basic error handler to satisfy fs.writeFile callback
+const handleError = (err, data) => {
+  if (err) {
+    switch (err.code) {
+      case 'EACCES':
+        console.error('Permission denied for %s', err.path)
+        break
+      case 'EEXIST':
+        console.error('File %s already exists', err.path)
+        break
+      default:
+        console.error('Error #%d occurred', err.code)
+    }
+  }
+}
 
 Object.keys(themes).forEach((name) => {
   let theme = themes[name]
+  let colorDir = './colors'
   delete theme.scheme
   delete theme.author
 
@@ -11,8 +27,13 @@ Object.keys(themes).forEach((name) => {
     acc[color] = theme[color].slice(1)
     return acc
   }, theme)
+  // If ./colors folder does not exist create it
+  if (!fs.existsSync(colorDir)) {
+    fs.mkdirSync(colorDir)
+  }
+
   let content = parse(name, theme)
-  fs.writeFile(`./colors/base16_${name}.kak`, content)
+  fs.writeFile(`./colors/base16_${name}.kak`, content, handleError)
 })
 
 function parse (name, theme) {
