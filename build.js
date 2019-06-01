@@ -43,7 +43,7 @@ return `
 ## base16_${name}.kak
 ##
 
-%sh{
+evaluate-commands %sh{
     ## http://chriskempson.com/projects/base16/
     ## default bg black
     base00='rgb:${theme.base00}'
@@ -90,53 +90,53 @@ return `
 
     ## code
     echo "
-        face value \${base09}+b
-        face type \${base0A}
-        face identifier \${base08}
-        face string \${base0B}
-        face error \${base05},\${base0B}
-        face keyword \${base0E}+b
-        face operator \${base05}
-        face attribute \${base09}
-        face comment \${base03}
-        face meta \${base0A}
+        face global value \${base09}+b
+        face global type \${base0A}
+        face global identifier \${base08}
+        face global string \${base0B}
+        face global error \${base05},\${base0B}
+        face global keyword \${base0E}+b
+        face global operator \${base05}
+        face global attribute \${base09}
+        face global comment \${base03}
+        face global meta \${base0A}
     "
 
     ## markup
     echo "
-        face title \${base0D}
-        face header \${base0D}
-        face bold \${base0A}
-        face italic \${base09}
-        face mono \${base0B}
-        face block \${base09}
-        face link \${base0D}
-        face bullet \${base0B}
-        face list \${base08}
+        face global title \${base0D}
+        face global header \${base0D}
+        face global bold \${base0A}
+        face global italic \${base09}
+        face global mono \${base0B}
+        face global block \${base09}
+        face global link \${base0D}
+        face global bullet \${base0B}
+        face global list \${base08}
     "
 
     ## builtin
     echo "
-        face Default \${base05},\${base_black}
-        face PrimarySelection \${base_white},\${base_blue}
-        face SecondarySelection \${base05},\${base_blue}
-        face PrimaryCursor \${base_black},\${base_white}
-        face SecondaryCursor \${base_black},\${base05}
-        face LineNumbers \${base05},\${base01}
-        face LineNumberCursor \${base05},rgb:282828+b
-        face MenuForeground \${base_white},\${base_blue}
-        face MenuBackground \${base_blue},\${base01}
-        face MenuInfo \${base_blue}
-        face Information \${base00},\${base_blue}
-        face Error \${base01},\${base_red}
-        face StatusLine \${base06},\${base01}
-        face StatusLineMode \${base_yellow}
-        face StatusLineInfo \${base_blue}
-        face StatusLineValue \${base_green}
-        face StatusCursor \${base02},\${base_blue}
-        face Prompt \${base_yellow},\${base_black}
-        face MatchingChar \${base_blue},\${base00}+b
-        face BufferPadding \${base_blue},\${base01}
+        face global Default \${base05},\${base_black}
+        face global PrimarySelection \${base_white},\${base_blue}
+        face global SecondarySelection \${base05},\${base_blue}
+        face global PrimaryCursor \${base_black},\${base_white}
+        face global SecondaryCursor \${base_black},\${base05}
+        face global LineNumbers \${base05},\${base01}
+        face global LineNumberCursor \${base05},rgb:282828+b
+        face global MenuForeground \${base_white},\${base_blue}
+        face global MenuBackground \${base_blue},\${base01}
+        face global MenuInfo \${base_blue}
+        face global Information \${base00},\${base_blue}
+        face global Error \${base01},\${base_red}
+        face global StatusLine \${base06},\${base01}
+        face global StatusLineMode \${base_yellow}
+        face global StatusLineInfo \${base_blue}
+        face global StatusLineValue \${base_green}
+        face global StatusCursor \${base02},\${base_blue}
+        face global Prompt \${base_yellow},\${base_black}
+        face global MatchingChar \${base_blue},\${base00}+b
+        face global BufferPadding \${base_blue},\${base01}
     "
 }
 `
